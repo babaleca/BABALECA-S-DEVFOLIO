@@ -12,6 +12,8 @@ Desenvolvedores que querem mostrar seus projetos normalmente usam um destes dois
 
 O DevFolio resolve isso oferecendo um painel administrativo simples onde o próprio autor cadastra, edita e remove projetos sem tocar em código, enquanto o site público exibe essas informações de forma visual e organizada — funcionando como um currículo técnico vivo. Para reforçar o caráter de aplicação real (e não apenas uma página estática), o site também permite que visitantes interajam deixando mensagens em um livro de visitas, e busca automaticamente dados atualizados dos repositórios diretamente da API do GitHub.
 
+**Importante — é um sistema single-tenant, não uma plataforma multiusuário:** o DevFolio é o portfólio de uma única pessoa (o autor). Existe apenas uma conta de administrador, pré-configurada, sem qualquer tela ou rota pública de cadastro — ninguém além do autor consegue criar conta, logar como admin ou cadastrar projetos próprios. Visitantes só têm acesso de leitura ao conteúdo e à interação prevista (livro de visitas); eles nunca criam, editam ou gerenciam projetos. O CRUD de projetos existe unicamente para o autor manter o próprio conteúdo sem precisar editar código — não é uma ferramenta para terceiros hospedarem os portfólios deles.
+
 ## Público-alvo
 
 - Recrutadores e times técnicos avaliando o autor para vagas ou projetos.
@@ -26,7 +28,7 @@ Oferecer uma vitrine interativa e sempre atualizada dos projetos pessoais do aut
 
 1. **Vitrine de projetos** — grade visual de cards com filtro por tecnologia/categoria e busca por palavra-chave.
 2. **Página de detalhes do projeto** — descrição completa, tecnologias usadas, links para repositório/demo e capturas de tela.
-3. **Painel administrativo protegido por login** — permite ao autor criar, editar e remover projetos.
+3. **Painel administrativo protegido por login** — acesso restrito à conta única do autor, para criar, editar e remover projetos (sem cadastro público de novos usuários administradores).
 4. **Livro de visitas** — qualquer visitante pode deixar nome e mensagem, visíveis publicamente.
 5. **Integração com a API do GitHub** — busca e exibe dados atualizados de cada repositório (estrelas, linguagem principal, data do último commit).
 6. **Busca e filtro de projetos** — por tecnologia ou palavra-chave, direto na vitrine.
@@ -36,7 +38,7 @@ Oferecer uma vitrine interativa e sempre atualizada dos projetos pessoais do aut
 1. **Projeto** — título, descrição curta e longa, URL do repositório GitHub, URL de demo (opcional), imagem de capa, data de cadastro.
 2. **Tecnologia** — nome e categoria (linguagem, framework, ferramenta); associada a um ou mais projetos (relação N:N).
 3. **Comentário** — nome do visitante, mensagem, data (livro de visitas).
-4. **Administrador** — usuário e senha (com hash), conta única do autor para acesso ao painel.
+4. **Administrador** — usuário e senha (com hash). Conta **única e pré-configurada**, pertencente exclusivamente ao autor; não existe operação de cadastro público de novos administradores.
 
 ## Telas / interfaces (mínimo 3)
 
@@ -47,7 +49,7 @@ Oferecer uma vitrine interativa e sempre atualizada dos projetos pessoais do aut
 
 ## Operações (mínimo 5)
 
-1. Autenticar administrador (login) e iniciar sessão.
+1. Autenticar administrador (login) e iniciar sessão. *(não há operação de cadastro de novo administrador — a conta é única e pré-configurada)*
 2. Criar um novo projeto, associando tecnologias.
 3. Editar um projeto existente.
 4. Remover um projeto.

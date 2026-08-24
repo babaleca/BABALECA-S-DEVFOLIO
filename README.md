@@ -8,6 +8,8 @@ Portfólio e vitrine de projetos com painel administrativo, livro de visitas e i
 
 O DevFolio é uma aplicação web que funciona como um currículo técnico interativo. Em vez de uma página estática que precisa ser editada manualmente a cada novo projeto, o autor cadastra e mantém seus projetos através de um painel administrativo, enquanto o site público exibe essa vitrine de forma visual, com dados sempre atualizados (inclusive informações puxadas diretamente do GitHub). Visitantes também podem interagir deixando mensagens em um livro de visitas.
 
+É um portfólio **de uma única pessoa** (o autor): existe apenas uma conta de administrador, pré-configurada, sem cadastro público. Visitantes só têm acesso de leitura e ao livro de visitas — não criam nem gerenciam projetos.
+
 Mais detalhes da especificação em [`docs/proposta.md`](docs/proposta.md).
 
 ## Problema que a aplicação resolve
