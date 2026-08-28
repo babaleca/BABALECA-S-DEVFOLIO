@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevFolio — Livro de Visitas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="site-header__brand">DevFolio</p>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projeto.html">Projeto (exemplo)</a></li>
+        <li><a href="livro-de-visitas.html" aria-current="page">Livro de Visitas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="livro-titulo">
+      <h1 id="livro-titulo">Livro de Visitas</h1>
+      <p>Passou por aqui? Deixe seu nome e uma mensagem para mim.</p>
+
+      <!--
+        Formulário ainda não funcional nesta etapa (Etapa 02 é só estrutura/HTML semântico).
+        O envio de fato (salvar no banco de dados) será implementado numa etapa futura,
+        quando o back-end entrar em cena.
+      -->
+      <form action="#" method="post">
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Enviar mensagem</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="mensagens-titulo">
+      <h2 id="mensagens-titulo">Mensagens de visitantes</h2>
+
+      <ul class="mensagens">
+        <li>
+          <article>
+            <header>
+              <strong>Visitante Exemplo</strong>
+              <time datetime="2026-08-20">20/08/2026</time>
+            </header>
+            <p>Adorei o portfólio, muito criativo!</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <header>
+              <strong>Outro Visitante</strong>
+              <time datetime="2026-08-18">18/08/2026</time>
+            </header>
+            <p>Mal posso esperar pra ver o fichário digital pronto.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 DevFolio — Projeto acadêmico.</p>
+  </footer>
+
+</body>
+</html>

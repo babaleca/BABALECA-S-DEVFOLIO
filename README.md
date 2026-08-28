@@ -27,14 +27,31 @@ Manter um portfólio de projetos atualizado costuma exigir editar código toda v
 
 ## Instruções para execução
 
-A implementação do código ainda não foi iniciada nesta etapa — esta entrega corresponde apenas à proposta e especificação inicial do projeto (Etapa 01). As instruções de instalação e execução serão adicionadas a partir da Etapa 02, quando o desenvolvimento tiver início.
+Nesta etapa o projeto ainda é só HTML/CSS estático, sem servidor. Para visualizar:
+
+```bash
+# opção 1: abrir direto no navegador
+src/index.html
+
+# opção 2: servir a pasta src/ com qualquer servidor estático, por exemplo:
+cd src
+python3 -m http.server 8000
+# depois acesse http://localhost:8000
+```
+
+As instruções para rodar o back-end (Node/Express) serão adicionadas quando ele for implementado, em uma etapa futura.
 
 ## Funcionalidades implementadas
 
-Nenhuma até o momento. Esta etapa entrega somente a especificação funcional do projeto (ver `docs/proposta.md`).
+- Estrutura HTML semântica de 3 páginas: Home, Detalhe do Projeto e Livro de Visitas (ver `docs/etapa-02.md` para detalhes e decisões).
+- Navegação estática entre as páginas.
+- Formulário do livro de visitas (campos com `label` associado), ainda sem envio real.
+
+Ainda não implementado: painel administrativo, autenticação, persistência de dados, integração com a API do GitHub, tela de boas-vindas com cursor animado e o tema visual de fichário digital — todos previstos na proposta (`docs/proposta.md`) para etapas futuras.
 
 ## Limitações conhecidas
 
-- Ainda não há código-fonte implementado.
+- Não há back-end, banco de dados nem lógica de aplicação ainda — o formulário do livro de visitas não envia de fato, e o conteúdo das páginas é estático/placeholder.
+- Faltam as demais 4 telas previstas na proposta (Boas-vindas, Sobre mim, Painel Admin, e a divisória "Projetos" do fichário); serão adicionadas nas próximas etapas.
 - Escopo, telas e tecnologias descritos aqui podem evoluir nas próximas etapas, mantendo a coerência da solução.
-- O fichário digital (animações, efeito de virar página, cursor com partículas, música) é um objetivo visualmente ambicioso; o plano é construí-lo em camadas ao longo do semestre, começando por uma versão funcional simples.
+- O fichário digital (animações, efeito de virar página, cursor com partículas, música) é um objetivo visualmente ambicioso; o plano é construí-lo em camadas ao longo do semestre — esta etapa entrega a primeira camada (versão funcional simples, sem as animações).

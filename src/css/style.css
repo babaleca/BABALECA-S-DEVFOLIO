@@ -1,0 +1,176 @@
+/*
+  Etapa 02 — CSS mínimo, só para legibilidade e organização básica.
+  Sem identidade visual ainda (isso vem em etapas futuras, junto com o
+  tema de "fichário digital" descrito em docs/proposta.md).
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: #222;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* Cabeçalho e navegação */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.site-header__brand {
+  margin: 0;
+  font-weight: bold;
+}
+
+.site-header nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header nav a {
+  text-decoration: none;
+  color: #222;
+}
+
+.site-header nav a[aria-current="page"] {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Cards de projeto */
+
+.projeto-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.projeto-card__tecnologias span {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  margin-right: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.botao-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  color: #222;
+}
+
+/* Página de detalhe do projeto */
+
+figure {
+  margin: 1rem 0;
+}
+
+figure img {
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Formulário — livro de visitas */
+
+.campo {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.campo label {
+  font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Lista de mensagens */
+
+.mensagens {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mensagens article {
+  border-top: 1px solid #eee;
+  padding: 0.75rem 0;
+}
+
+.mensagens header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.mensagens time {
+  color: #666;
+}
+
+/* Rodapé */
+
+.site-footer {
+  border-top: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
