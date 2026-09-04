@@ -4,6 +4,28 @@
   tema de "fichário digital" descrito em docs/proposta.md).
 */
 
+/*
+  Etapa 03 — Interface responsiva com CSS.
+  O que foi feito nesta etapa:
+  - Grade de projetos com CSS Grid usando
+    repeat(auto-fit, minmax(200px, 1fr)), pra se ajustar sozinha ao
+    espaço do navegador da pessoa acessando.
+  - 2 breakpoints com media queries (768px tablet e 480px celular),
+    ajustando padding do body e empilhando o cabeçalho/menu no celular.
+  - Paleta de cores definida em variáveis no :root, e
+    aplicada no fundo, texto, títulos e links da página.
+  - Ajuste de cor em .botao-link e .site-header nav a: essas regras usam
+    seletores de classe, que têm mais especificidade que o seletor "a"
+    sozinho.
+*/
+
+:root {
+  --verde-fundo: #070e07;   /* verde escuro para o fundo da página */
+  --creme-letra: #ece4d3;   /* creme claro para o texto */
+  --dourado-destaque: #cda434; /* dourado para títulos, bordas e links */
+  --roxo-destaque: #b7a1f3; /* roxo para a */
+}
+
 * {
   box-sizing: border-box;
 }
@@ -12,7 +34,36 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.5;
-  color: #222;
+  color: var(--creme-letra);
+  background: var(--verde-fundo);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dourado-destaque);
+}
+
+a {
+  color: var(--roxo-destaque); /* padrão de todo link da página */
+}
+
+@media (max-width: 768px) { /*breakpoint caso tablet*/
+  body {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) { /*breakpoint caso celular*/
+  body {
+    padding: 0 0.5rem;
+  }
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 main {
@@ -48,12 +99,18 @@ main {
 
 .site-header nav a {
   text-decoration: none;
-  color: #222;
+  color: var(--creme-letra); /* era #222 — agora creme, visível no fundo escuro */
 }
 
 .site-header nav a[aria-current="page"] {
   text-decoration: underline;
   font-weight: bold;
+}
+
+.projetos-grid {/* grid nova */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));/* 240 acaba n cabendo as 3 colunas por causa do max width */
+  gap: 1rem;
 }
 
 /* Cards de projeto */
@@ -78,10 +135,10 @@ main {
   display: inline-block;
   margin-top: 0.5rem;
   text-decoration: none;
-  border: 1px solid #222;
+  border: 1px solid var(--dourado-destaque); /* era #222 — agora borda dourada, visível no fundo escuro */
   border-radius: 4px;
   padding: 0.4rem 0.8rem;
-  color: #222;
+  color: var(--dourado-destaque); /* era #222 — texto dourado, mesma cor da borda */
 }
 
 /* Página de detalhe do projeto */
