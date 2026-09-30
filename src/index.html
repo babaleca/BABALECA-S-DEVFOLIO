@@ -31,8 +31,17 @@
 
     <section id="projetos-destaque" aria-labelledby="projetos-destaque-titulo">
       <h2 id="projetos-destaque-titulo">Projetos em destaque</h2>
+
+      <!-- Etapa 04: campo de busca/filtro, lido pelo js/projetos.js -->
+      <div class="campo">
+        <label for="busca-projetos">Buscar por nome ou tecnologia</label>
+        <input type="search" id="busca-projetos" placeholder="ex.: CSS, Node, exemplo2...">
+      </div>
+
       <div class="projetos-grid">
-        <article class="projeto-card">
+        <!-- data-tecnologias: lista de tecnologias do card em texto simples,
+             usada pelo JavaScript pra comparar com o que foi buscado. -->
+        <article class="projeto-card" data-tecnologias="html css javascript">
           <h3><a href="projeto.html">Nome do Projeto (exemplo1)</a></h3>
           <p>
             Descrição curta do projeto de exemplo — nesta etapa o conteúdo ainda é estático,
@@ -44,31 +53,35 @@
           <a class="botao-link" href="projeto.html">Ver detalhes</a>
         </article>
 
-        <article class="projeto-card">
+        <article class="projeto-card" data-tecnologias="node.js express">
           <h3><a href="projeto.html">Nome do Projeto (exemplo2)</a></h3>
           <p>
             Descrição curta do projeto de exemplo — nesta etapa o conteúdo ainda é estático,
             nas próximas etapas os projetos reais serão cadastrados pelo painel administrativo.
           </p>
           <p class="projeto-card__tecnologias">
-            Tecnologias: <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>
+            Tecnologias: <span>Node.js</span>, <span>Express</span>
           </p>
           <a class="botao-link" href="projeto.html">Ver detalhes</a>
         </article>
 
-        <article class="projeto-card">
+        <article class="projeto-card" data-tecnologias="sqlite api github">
           <h3><a href="projeto.html">Nome do Projeto (exemplo3)</a></h3>
           <p>
             Descrição curta do projeto de exemplo — nesta etapa o conteúdo ainda é estático,
             nas próximas etapas os projetos reais serão cadastrados pelo painel administrativo.
           </p>
           <p class="projeto-card__tecnologias">
-            Tecnologias: <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>
+            Tecnologias: <span>SQLite</span>, <span>API GitHub</span>
           </p>
           <a class="botao-link" href="projeto.html">Ver detalhes</a>
         </article>
 
       </div>
+
+      <!-- Mensagem de "nada encontrado", escondida por padrão (hidden) e
+           mostrada pelo js/projetos.js quando o filtro não bate com nenhum card. -->
+      <p id="projetos-sem-resultado" hidden>Nenhum projeto encontrado para essa busca.</p>
     </section>
   </main>
 
@@ -81,5 +94,7 @@
     <p>&copy; 2026 DevFolio — Projeto acadêmico.</p>
   </footer>
 
+  <!-- Etapa 04: script com a lógica de busca/filtro dos projetos -->
+  <script src="js/projetos.js" defer></script>
 </body>
 </html>

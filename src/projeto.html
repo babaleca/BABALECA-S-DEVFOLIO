@@ -31,30 +31,46 @@
         <figcaption>Captura de tela ilustrativa — será substituída por imagens reais dos projetos.</figcaption>
       </figure>
 
+      <!--
+        Etapa 04: cada seção abaixo ganha um botão "Mostrar/Ocultar"
+        (classe acordeao-toggle) que abre/fecha o bloco de conteúdo
+        correspondente. aria-controls liga o botão ao id do bloco que ele
+        controla; aria-expanded guarda o estado atual (aberto/fechado) —
+        os dois são lidos e atualizados pelo js/projeto-detalhe.js.
+      -->
       <section aria-labelledby="sobre-titulo">
         <h2 id="sobre-titulo">Sobre o projeto</h2>
-        <p>
-          Este é um projeto de exemplo usado para validar a estrutura da página de detalhes.
-          Nas próximas etapas, o conteúdo desta página será preenchido dinamicamente a partir
-          dos dados cadastrados no painel administrativo.
-        </p>
+        <button type="button" class="acordeao-toggle" aria-expanded="true" aria-controls="sobre-conteudo">Ocultar</button>
+        <div id="sobre-conteudo">
+          <p>
+            Este é um projeto de exemplo usado para validar a estrutura da página de detalhes.
+            Nas próximas etapas, o conteúdo desta página será preenchido dinamicamente a partir
+            dos dados cadastrados no painel administrativo.
+          </p>
+        </div>
       </section>
 
       <section aria-labelledby="tecnologias-titulo">
         <h2 id="tecnologias-titulo">Tecnologias utilizadas</h2>
-        <ul>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript</li>
-        </ul>
+        <button type="button" class="acordeao-toggle" aria-expanded="true" aria-controls="tecnologias-conteudo">Ocultar</button>
+        <div id="tecnologias-conteudo">
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
       </section>
 
       <section aria-labelledby="links-titulo">
         <h2 id="links-titulo">Links</h2>
-        <ul>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Ver demo</a></li>
-        </ul>
+        <button type="button" class="acordeao-toggle" aria-expanded="false" aria-controls="links-conteudo">Mostrar</button>
+        <div id="links-conteudo" hidden>
+          <ul>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Ver demo</a></li>
+          </ul>
+        </div>
       </section>
 
       <p><a class="botao-link" href="index.html">&larr; Voltar para a Home</a></p>
@@ -65,5 +81,7 @@
     <p>&copy; 2026 DevFolio — Projeto acadêmico.</p>
   </footer>
 
+  <!-- Etapa 04: script com o comportamento de abrir/fechar das seções -->
+  <script src="js/projeto-detalhe.js" defer></script>
 </body>
 </html>

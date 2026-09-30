@@ -27,7 +27,7 @@ Manter um portfólio de projetos atualizado costuma exigir editar código toda v
 
 ## Instruções para execução
 
-Nesta etapa o projeto ainda é só HTML/CSS estático, sem servidor. Para visualizar:
+Nesta etapa o projeto ainda é HTML/CSS/JavaScript estático, sem servidor (o JavaScript roda todo no navegador, sem salvar nada de fato). Para visualizar:
 
 ```bash
 # opção 1: abrir direto no navegador
@@ -48,13 +48,14 @@ As instruções para rodar o back-end (Node/Express) serão adicionadas quando e
 - Formulário do livro de visitas (campos com `label` associado), ainda sem envio real.
 - Layout responsivo com Flexbox (cabeçalho, menu, formulário, mensagens) e CSS Grid (grade de projetos), com 2 breakpoints (768px e 480px) adaptando o layout para tablet e smartphone.
 - Paleta de cores própria (fundo escuro, títulos em dourado, links em roxo) definida em variáveis CSS (ver `docs/etapa-03.md` para todas as decisões de responsividade e estilo).
+- Interatividade em JavaScript puro: busca/filtro dos projetos na Home, validação e envio dinâmico (no cliente) do formulário do livro de visitas, e seções retráteis na página de detalhe do projeto (ver `docs/etapa-04.md` para a descrição completa de cada funcionalidade).
 
-Ainda não implementado: painel administrativo, autenticação, persistência de dados, integração com a API do GitHub, tela de boas-vindas com cursor animado e o tema visual de fichário digital — todos previstos na proposta (`docs/proposta.md`) para etapas futuras.
+Ainda não implementado: painel administrativo, autenticação, persistência de dados de verdade (banco de dados), integração com a API do GitHub, tela de boas-vindas com cursor animado e o tema visual de fichário digital — todos previstos na proposta (`docs/proposta.md`) para etapas futuras.
 
 ## Limitações conhecidas
 
-- Não há back-end, banco de dados nem lógica de aplicação ainda — o formulário do livro de visitas não envia de fato, e o conteúdo das páginas é estático/placeholder.
+- Não há back-end nem banco de dados ainda — o formulário do livro de visitas valida e mostra a mensagem na tela, mas não salva nada de verdade: se a página for recarregada, as mensagens novas somem e voltam a aparecer só as duas de exemplo.
 - Faltam as demais 4 telas previstas na proposta (Boas-vindas, Sobre mim, Painel Admin, e a divisória "Projetos" do fichário); serão adicionadas nas próximas etapas.
-- Os 3 cards de projeto na Home são todos de exemplo/placeholder, usados para demonstrar a grade responsiva — os projetos reais virão do painel administrativo numa etapa futura.
+- Os 3 cards de projeto na Home são todos de exemplo/placeholder, usados para demonstrar a grade responsiva e o filtro — os projetos reais virão do painel administrativo numa etapa futura.
 - Escopo, telas e tecnologias descritos aqui podem evoluir nas próximas etapas, mantendo a coerência da solução.
-- O fichário digital (animações, efeito de virar página, cursor com partículas, música) é um objetivo visualmente ambicioso; o plano é construí-lo em camadas ao longo do semestre — esta etapa entrega a segunda camada (base funcional + responsividade e paleta de cores), ainda sem as animações.
+- O fichário digital (animações, efeito de virar página, cursor com partículas, música) é um objetivo visualmente ambicioso; o plano é construí-lo em camadas ao longo do semestre — esta etapa entrega a terceira camada (interatividade em JavaScript sobre a base responsiva), ainda sem as animações do fichário em si.

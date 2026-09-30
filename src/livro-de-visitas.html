@@ -25,19 +25,24 @@
       <p>Passou por aqui? Deixe seu nome e uma mensagem para mim.</p>
 
       <!--
-        Formulário ainda não funcional nesta etapa (Etapa 02 é só estrutura/HTML semântico).
-        O envio de fato (salvar no banco de dados) será implementado numa etapa futura,
-        quando o back-end entrar em cena.
+        Etapa 04: o formulário passa a funcionar no lado do cliente (sem
+        back-end ainda) — o JavaScript em js/livro-de-visitas.js valida os
+        campos e adiciona a mensagem na lista abaixo, sem recarregar a página.
+        O envio de verdade (salvar no banco de dados) continua sendo uma
+        etapa futura.
       -->
-      <form action="#" method="post">
+      <form action="#" method="post" id="form-livro-visitas" novalidate>
         <div class="campo">
           <label for="nome">Nome</label>
           <input type="text" id="nome" name="nome" required>
+          <!-- Onde o JS escreve a mensagem de erro, se o campo estiver inválido -->
+          <span class="erro-campo" id="erro-nome" role="alert"></span>
         </div>
 
         <div class="campo">
           <label for="mensagem">Mensagem</label>
           <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+          <span class="erro-campo" id="erro-mensagem" role="alert"></span>
         </div>
 
         <button type="submit">Enviar mensagem</button>
@@ -47,26 +52,10 @@
     <section aria-labelledby="mensagens-titulo">
       <h2 id="mensagens-titulo">Mensagens de visitantes</h2>
 
-      <ul class="mensagens">
-        <li>
-          <article>
-            <header>
-              <strong>Visitante Exemplo</strong>
-              <time datetime="2026-08-20">20/08/2026</time>
-            </header>
-            <p>Adorei o portfólio, muito criativo!</p>
-          </article>
-        </li>
-        <li>
-          <article>
-            <header>
-              <strong>Outro Visitante</strong>
-              <time datetime="2026-08-18">18/08/2026</time>
-            </header>
-            <p>Mal posso esperar pra ver o fichário digital pronto.</p>
-          </article>
-        </li>
-      </ul>
+      <!-- Etapa 04: a lista começa vazia no HTML — quem desenha as mensagens
+           (inclusive as duas de exemplo que já existiam) é o
+           js/livro-de-visitas.js, a partir de um array guardado no script. -->
+      <ul class="mensagens" id="lista-mensagens"></ul>
     </section>
   </main>
 
@@ -74,5 +63,7 @@
     <p>&copy; 2026 DevFolio — Projeto acadêmico.</p>
   </footer>
 
+  <!-- Etapa 04: script com a validação e o envio "no cliente" do formulário -->
+  <script src="js/livro-de-visitas.js" defer></script>
 </body>
 </html>
