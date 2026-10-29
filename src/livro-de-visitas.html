@@ -25,11 +25,10 @@
       <p>Passou por aqui? Deixe seu nome e uma mensagem para mim.</p>
 
       <!--
-        Etapa 04: o formulário passa a funcionar no lado do cliente (sem
-        back-end ainda) — o JavaScript em js/livro-de-visitas.js valida os
-        campos e adiciona a mensagem na lista abaixo, sem recarregar a página.
-        O envio de verdade (salvar no banco de dados) continua sendo uma
-        etapa futura.
+        Etapa 05: o formulário agora envia a mensagem via POST assíncrono
+        para um serviço simulado (JSONPlaceholder), usando fetch + async/await.
+        Enquanto envia, o botão mostra "Enviando..." e fica desabilitado.
+        Se der erro de rede, mostra mensagem de erro.
       -->
       <form action="#" method="post" id="form-livro-visitas" novalidate>
         <div class="campo">
@@ -52,9 +51,11 @@
     <section aria-labelledby="mensagens-titulo">
       <h2 id="mensagens-titulo">Mensagens de visitantes</h2>
 
-      <!-- Etapa 04: a lista começa vazia no HTML — quem desenha as mensagens
-           (inclusive as duas de exemplo que já existiam) é o
-           js/livro-de-visitas.js, a partir de um array guardado no script. -->
+      <!--
+        Etapa 05: a lista começa vazia — as mensagens são buscadas via
+        fetch de dados/mensagens.json e renderizadas pelo JavaScript.
+        Enquanto carrega, aparece "Carregando mensagens...".
+      -->
       <ul class="mensagens" id="lista-mensagens"></ul>
     </section>
   </main>
@@ -63,7 +64,10 @@
     <p>&copy; 2026 DevFolio — Projeto acadêmico.</p>
   </footer>
 
-  <!-- Etapa 04: script com a validação e o envio "no cliente" do formulário -->
-  <script src="js/livro-de-visitas.js" defer></script>
+  <!--
+    Etapa 05: type="module" permite import/export entre arquivos JS.
+    Módulos ES são defer por padrão (esperam o DOM carregar).
+  -->
+  <script type="module" src="js/livro-de-visitas.js"></script>
 </body>
 </html>

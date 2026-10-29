@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nome": "Nome do Projeto (exemplo1)",
+    "descricao": "Descrição curta do projeto de exemplo — nesta etapa o conteúdo ainda é estático, nas próximas etapas os projetos reais serão cadastrados pelo painel administrativo.",
+    "tecnologias": ["HTML", "CSS", "JavaScript"],
+    "link": "projeto.html"
+  },
+  {
+    "id": 2,
+    "nome": "Nome do Projeto (exemplo2)",
+    "descricao": "Descrição curta do projeto de exemplo — nesta etapa o conteúdo ainda é estático, nas próximas etapas os projetos reais serão cadastrados pelo painel administrativo.",
+    "tecnologias": ["Node.js", "Express"],
+    "link": "projeto.html"
+  },
+  {
+    "id": 3,
+    "nome": "Nome do Projeto (exemplo3)",
+    "descricao": "Descrição curta do projeto de exemplo — nesta etapa o conteúdo ainda é estático, nas próximas etapas os projetos reais serão cadastrados pelo painel administrativo.",
+    "tecnologias": ["SQLite", "API GitHub"],
+    "link": "projeto.html"
+  }
+]

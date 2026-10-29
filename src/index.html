@@ -38,45 +38,13 @@
         <input type="search" id="busca-projetos" placeholder="ex.: CSS, Node, exemplo2...">
       </div>
 
+      <!--
+        Etapa 05: a grade começa vazia no HTML — os cards de projeto são
+        carregados via fetch de dados/projetos.json e criados pelo
+        JavaScript (js/projetos.js). Enquanto carrega, aparece um
+        indicador "Carregando projetos...".
+      -->
       <div class="projetos-grid">
-        <!-- data-tecnologias: lista de tecnologias do card em texto simples,
-             usada pelo JavaScript pra comparar com o que foi buscado. -->
-        <article class="projeto-card" data-tecnologias="html css javascript">
-          <h3><a href="projeto.html">Nome do Projeto (exemplo1)</a></h3>
-          <p>
-            Descrição curta do projeto de exemplo — nesta etapa o conteúdo ainda é estático,
-            nas próximas etapas os projetos reais serão cadastrados pelo painel administrativo.
-          </p>
-          <p class="projeto-card__tecnologias">
-            Tecnologias: <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>
-          </p>
-          <a class="botao-link" href="projeto.html">Ver detalhes</a>
-        </article>
-
-        <article class="projeto-card" data-tecnologias="node.js express">
-          <h3><a href="projeto.html">Nome do Projeto (exemplo2)</a></h3>
-          <p>
-            Descrição curta do projeto de exemplo — nesta etapa o conteúdo ainda é estático,
-            nas próximas etapas os projetos reais serão cadastrados pelo painel administrativo.
-          </p>
-          <p class="projeto-card__tecnologias">
-            Tecnologias: <span>Node.js</span>, <span>Express</span>
-          </p>
-          <a class="botao-link" href="projeto.html">Ver detalhes</a>
-        </article>
-
-        <article class="projeto-card" data-tecnologias="sqlite api github">
-          <h3><a href="projeto.html">Nome do Projeto (exemplo3)</a></h3>
-          <p>
-            Descrição curta do projeto de exemplo — nesta etapa o conteúdo ainda é estático,
-            nas próximas etapas os projetos reais serão cadastrados pelo painel administrativo.
-          </p>
-          <p class="projeto-card__tecnologias">
-            Tecnologias: <span>SQLite</span>, <span>API GitHub</span>
-          </p>
-          <a class="botao-link" href="projeto.html">Ver detalhes</a>
-        </article>
-
       </div>
 
       <!-- Mensagem de "nada encontrado", escondida por padrão (hidden) e
@@ -94,7 +62,12 @@
     <p>&copy; 2026 DevFolio — Projeto acadêmico.</p>
   </footer>
 
-  <!-- Etapa 04: script com a lógica de busca/filtro dos projetos -->
-  <script src="js/projetos.js" defer></script>
+  <!--
+    Etapa 05: type="module" marca este script como módulo ES.
+    Isso permite usar import/export E faz o script esperar o DOM
+    carregar automaticamente (não precisa mais de DOMContentLoaded).
+    O atributo defer não é necessário com type="module" (já é defer por padrão).
+  -->
+  <script type="module" src="js/projetos.js"></script>
 </body>
 </html>

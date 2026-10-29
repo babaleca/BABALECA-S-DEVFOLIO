@@ -81,7 +81,12 @@
     <p>&copy; 2026 DevFolio — Projeto acadêmico.</p>
   </footer>
 
-  <!-- Etapa 04: script com o comportamento de abrir/fechar das seções -->
-  <script src="js/projeto-detalhe.js" defer></script>
+  <!--
+    Etapa 05: type="module" permite import/export.
+    O acordeão não usa comunicação assíncrona — é lógica de UI pura.
+    Mas foi convertido pra módulo pra manter consistência e exportar
+    a função inicializarAcordeao pra reuso.
+  -->
+  <script type="module" src="js/projeto-detalhe.js"></script>
 </body>
 </html>
