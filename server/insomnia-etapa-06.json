@@ -1,0 +1,143 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-11-18T00:00:00.000Z",
+  "__export_source": "devfolio.etapa-06",
+  "resources": [
+    {
+      "_id": "wrk_devfolio",
+      "_type": "workspace",
+      "parentId": null,
+      "name": "DevFolio API — Etapa 06",
+      "description": "Colecao de requisicoes para testar a API REST do DevFolio (recursos Projetos e Mensagens)."
+    },
+    {
+      "_id": "env_devfolio_base",
+      "_type": "environment",
+      "parentId": "wrk_devfolio",
+      "name": "Base Environment",
+      "data": { "base_url": "http://localhost:3000" }
+    },
+    {
+      "_id": "fld_projetos",
+      "_type": "request_group",
+      "parentId": "wrk_devfolio",
+      "name": "Projetos"
+    },
+    {
+      "_id": "req_projetos_listar",
+      "_type": "request",
+      "parentId": "fld_projetos",
+      "name": "Listar projetos",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/projetos"
+    },
+    {
+      "_id": "req_projetos_filtrar",
+      "_type": "request",
+      "parentId": "fld_projetos",
+      "name": "Listar projetos (filtro por tecnologia)",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/projetos",
+      "parameters": [{ "name": "tecnologia", "value": "node" }]
+    },
+    {
+      "_id": "req_projetos_consultar",
+      "_type": "request",
+      "parentId": "fld_projetos",
+      "name": "Consultar projeto por id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/projetos/1"
+    },
+    {
+      "_id": "req_projetos_criar",
+      "_type": "request",
+      "parentId": "fld_projetos",
+      "name": "Criar projeto",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/projetos",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Novo projeto\",\n  \"descricao\": \"Descricao do novo projeto.\",\n  \"tecnologias\": [\"HTML\", \"CSS\"],\n  \"link\": \"projeto.html\"\n}"
+      },
+      "headers": [{ "name": "Content-Type", "value": "application/json" }]
+    },
+    {
+      "_id": "req_projetos_alterar",
+      "_type": "request",
+      "parentId": "fld_projetos",
+      "name": "Alterar projeto",
+      "method": "PATCH",
+      "url": "{{ _.base_url }}/api/projetos/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"descricao\": \"Descricao atualizada.\"\n}"
+      },
+      "headers": [{ "name": "Content-Type", "value": "application/json" }]
+    },
+    {
+      "_id": "req_projetos_remover",
+      "_type": "request",
+      "parentId": "fld_projetos",
+      "name": "Remover projeto",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/projetos/1"
+    },
+    {
+      "_id": "fld_mensagens",
+      "_type": "request_group",
+      "parentId": "wrk_devfolio",
+      "name": "Mensagens"
+    },
+    {
+      "_id": "req_mensagens_listar",
+      "_type": "request",
+      "parentId": "fld_mensagens",
+      "name": "Listar mensagens",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/mensagens"
+    },
+    {
+      "_id": "req_mensagens_consultar",
+      "_type": "request",
+      "parentId": "fld_mensagens",
+      "name": "Consultar mensagem por id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/mensagens/1"
+    },
+    {
+      "_id": "req_mensagens_criar",
+      "_type": "request",
+      "parentId": "fld_mensagens",
+      "name": "Criar mensagem",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/mensagens",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Visitante\",\n  \"mensagem\": \"Mensagem de teste.\"\n}"
+      },
+      "headers": [{ "name": "Content-Type", "value": "application/json" }]
+    },
+    {
+      "_id": "req_mensagens_fixar",
+      "_type": "request",
+      "parentId": "fld_mensagens",
+      "name": "Fixar/desfixar mensagem",
+      "method": "PATCH",
+      "url": "{{ _.base_url }}/api/mensagens/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"fixada\": true\n}"
+      },
+      "headers": [{ "name": "Content-Type", "value": "application/json" }]
+    },
+    {
+      "_id": "req_mensagens_remover",
+      "_type": "request",
+      "parentId": "fld_mensagens",
+      "name": "Remover mensagem",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/mensagens/1"
+    }
+  ]
+}

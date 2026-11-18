@@ -1,0 +1,17 @@
+{
+  "name": "devfolio-api",
+  "version": "1.0.0",
+  "description": "API REST do DevFolio — Etapa 06 (Tecnologia de Construção de Software I)",
+  "main": "app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "author": "Barbara Bandarra",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
